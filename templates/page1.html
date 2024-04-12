@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kavin - Learn Tamil</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='page1.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="welcome">
+            <h1>Welcome to Kavin!</h1>
+            <h1>கவின் செயலிக்கு உங்களை வரவேற்கிறோம்!</h1>
+            <p>An AI-powered and personalized language learning tool for Tamil</p>
+        </div>
+        <form class="signup-form" action="{{ url_for('signup') }}">
+            <h2>Sign Up</h2>
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email address">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password">
+            <label for="language">Learn Tamil through:</label>
+            <select name="language" id="language">
+                <option value="english">English</option>
+            </select>
+            <button type="submit">Sign Up</button>
+        </form>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

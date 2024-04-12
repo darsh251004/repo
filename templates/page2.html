@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="{{url_for('static', filename='page2.css')}}">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Dashboard</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>HI {{username}}</h1>
+        <h1>LEARNING DASHBOARD</h1>
+        <div class="stats">
+            <div class="stat">
+                <h3>Listening</h3>
+                <img class="img-listening" src="{{ url_for('static', filename='listening.jpg')}}">
+
+            </div>
+            <div class="stat">
+                <h3>Speaking</h3>
+                <img class="img-speaking" src="{{ url_for('static', filename='speaking.jpg')}}">
+
+            </div>
+            <div class="stat">
+                <h3>Reading</h3>
+                <form action="{{ url_for('a1') }}">
+                    <button type="submit"><img class="img-reading"
+                            src="{{ url_for('static', filename='reading.jpg')}}"></button>
+                </form>
+            </div>
+            <div class="stat">
+                <h3>Writing</h3>
+                <img class="img-writing" src="{{ url_for('static', filename='writing.jpg')}}">
+
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById("reading_btn").addEventListener("click", function () {
+            sendData('reading_button');
+        });
+
+        function sendData(buttonId) {
+            fetch('/button_input', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ button_id: buttonId }),
+            })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+        }
+
+    </script>
+
+    </script>
+</body>
+
+</html>
