@@ -10,7 +10,7 @@ body {
   padding: 10px;
   margin: 5px;
   border-radius: 5px;
-  
+  background-color: #2ecc71;
   color: rgb(255, 0, 0); /* White text color for contrast */
 }
 
