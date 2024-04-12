@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
     font-family: sans-serif;
     margin: 0;
@@ -50,3 +54,16 @@ h2 {
     font-weight: bold;
 }
 
+/* Apply circular cropping to images */
+.img-listening,
+.img-speaking,
+.img-reading,
+.img-writing {
+    border-radius: 50%;
+    width: 100px; /* Adjust size as needed */
+    height: 100px; /* Adjust size as needed */
+    object-fit: cover; /* Ensures the image covers the entire circle */
+}
+.img-listening{
+    opacity: 100%;
+}

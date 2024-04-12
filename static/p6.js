@@ -70,7 +70,7 @@ function showQuestion() {
     const button = document.createElement("button");
     button.innerHTML = answer.text;
     button.classList.add("btn");
-    answerButtons.appendChild(button); // Corrected line
+    answerButtons.appendChild(button);
     if (answer.correct) {
       button.dataset.correct = answer.correct;
     }
@@ -103,34 +103,28 @@ function selectAnswer(e) {
   nextButton.style.display = "block";
 }
 
-function showScore() {
-  resetState();
-  questionElement.innerHTML = `You scored ${score} out of ${questions.length}!`;
-  nextButton.innerHTML = "Play Again";
-  nextButton.style.display = "block";
-}
-function showScore() {
-  resetState();
-  questionElement.innerHTML = `You scored ${score} out of ${questions.length}!`;
-  nextButton.innerHTML = "Play Again";
-  nextButton.style.display = "block";
-
-  // Add comments and suggestions based on score
-  if (score === questions.length) {
-    // Perfect score!
-    questionElement.innerHTML += " Excellent work! You seem to have a strong grasp of the Tamil alphabet.";
-  } else if (score > questions.length * 0.75) {
-    // Above 75% score
-    questionElement.innerHTML += " Great job! You're doing well with identifying Tamil letters.";
-  } else if (score > questions.length * 0.5) {
-    // Above 50% score
-    questionElement.innerHTML += " Keep practicing! You're on the right track.";
+function redirectToPage(score) {
+  if (score <= 2) {
+    // Score 0, 1, or 2
+    window.location.href = "/beginner"; // Redirect to a page for beginners
+  } else if (score <= 4) {
+    // Score 3 or 4
+    window.location.href = "/intermediate"; // Redirect to a page for intermediate
   } else {
-    // Below 50% score (optional, you can add a message here)
-    questionElement.innerHTML += " Needs more practice. Should be strong at the foundation level.";
+    // Score 5
+    window.location.href = "/expert"; // Redirect to a page for experts
   }
 }
 
+function showScore() {
+  resetState();
+  questionElement.innerHTML = `You scored ${score} out of ${questions.length}!`;
+  nextButton.innerHTML = "Play Again";
+  nextButton.style.display = "block";
+
+  setTimeout(() =>  5000);
+  redirectToPage(score); // Redirect based on the score
+}
 
 function handleNextButton() {
   currentQuestionIndex++;

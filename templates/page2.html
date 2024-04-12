@@ -20,20 +20,22 @@
             </div>
             <div class="stat">
                 <h3>Speaking</h3>
-                <img class="img-speaking" src="{{ url_for('static', filename='speaking.jpg')}}">
-
+                <form action="{{ url_for('s1') }}"><button type="submit">
+                        <img class="img-speaking" src="{{ url_for('static', filename='speaking.jpg')}}"></button>
+                </form>
             </div>
             <div class="stat">
                 <h3>Reading</h3>
-                <form action="{{ url_for('a1') }}">
-                    <button type="submit"><img class="img-reading"
-                            src="{{ url_for('static', filename='reading.jpg')}}"></button>
+                <form action="{{ url_for('a1') }}"><button type="submit">
+                    <img class="img-reading" src="{{ url_for('static', filename='reading.jpg')}}"></button>
                 </form>
             </div>
             <div class="stat">
                 <h3>Writing</h3>
-                <img class="img-writing" src="{{ url_for('static', filename='writing.jpg')}}">
-
+                <form action="{{ url_for('w1') }}">
+                    <button type="submit"><img class="img-writing"
+                            src="{{ url_for('static', filename='writing.jpg')}}"></button>
+                </form>
             </div>
         </div>
     </div>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Directed Letter Writing</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='w1.css') }}">
+</head>
+<body>
+  <main id="main">
+    <h1>Directed Letter Writing</h1>
+    <div id="letter-container">
+      <div id="letter-display" class="card">
+        <span id="letter"></span>
+        <img id="arrow" src="{{ url_for('static', filename='imgs/arrow.png') }}">
+      </div>
+      <div id="writing-area" class="card">
+        <canvas id="writingCanvas"></canvas>
+        <button id="clearBtn">Clear</button>
+        <button id="nextBtn">Next</button>
+      </div>
+    </div>
+  </main>
+  <script src="{{ url_for('static', filename='w1.js') }}"></script>
+</body>
+</html>

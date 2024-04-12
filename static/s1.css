@@ -1,0 +1,36 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #f5f5f5; /* Light gray background */
+}
+
+.word-box {
+  display: inline-block;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 5px;
+  
+  color: rgb(255, 0, 0); /* White text color for contrast */
+}
+
+/* Custom background colors for each word box */
+.bg-blue-500 {
+  background-color: #3498db; /* Light blue background */
+}
+
+.bg-green-500 {
+  background-color: #2ecc71; /* Emerald green background */
+}
+
+.bg-yellow-500 {
+  background-color: #f1c40f; /* Yellow background */
+}
+
+.bg-red-500 {
+  background-color: #e74c3c; /* Red background */
+}
+
+.bg-purple-500 {
+  background-color: #9b59b6; /* Purple background */
+}
